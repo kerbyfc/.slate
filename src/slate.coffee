@@ -20,5 +20,3 @@ global.components =
   resizer  : require './components/Resizer.coffee'
   switcher : require './components/Switcher.coffee'
   rekauncher: require './components/Relauncher.coffee'
-
-

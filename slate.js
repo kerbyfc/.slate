@@ -28,38 +28,7 @@
 
 
 })(window)
-},{"./components/Shell.coffee":2,"./utils.coffee":3,"./components/Logger.coffee":4,"./components/Focuser.coffee":5,"./components/Resizer.coffee":6,"./components/Switcher.coffee":7,"./components/Relauncher.coffee":8}],5:[function(require,module,exports){
-(function() {
-  var Focuser;
-
-  Focuser = (function() {
-    function Focuser(config) {
-      this.config = config != null ? config : _.cfg('focuser');
-      this.setup();
-    }
-
-    Focuser.prototype.setup = function(config) {
-      var _this = this;
-      this.config = config != null ? config : this.config;
-      return _.each(this.config.directions, function(key, direction) {
-        return S.bind(key + ":" + _this.config.modifier, function(win) {
-          return win.doOperation(S.op('focus', {
-            direction: direction
-          }));
-        });
-      });
-    };
-
-    return Focuser;
-
-  })();
-
-  module.exports = new Focuser;
-
-}).call(this);
-
-
-},{}],3:[function(require,module,exports){
+},{"./components/Shell.coffee":2,"./utils.coffee":3,"./components/Logger.coffee":4,"./components/Focuser.coffee":5,"./components/Resizer.coffee":6,"./components/Switcher.coffee":7,"./components/Relauncher.coffee":8}],3:[function(require,module,exports){
 (function(global){(function() {
   _.mixin({
     /*
@@ -171,20 +140,33 @@
 }).call(this);
 
 
-},{}],7:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 (function() {
-  var Switcher;
+  var Focuser;
 
-  Switcher = (function() {
-    function Switcher() {
-      false;
+  Focuser = (function() {
+    function Focuser(config) {
+      this.config = config != null ? config : _.cfg('focuser');
+      this.setup();
     }
 
-    return Switcher;
+    Focuser.prototype.setup = function(config) {
+      var _this = this;
+      this.config = config != null ? config : this.config;
+      return _.each(this.config.directions, function(key, direction) {
+        return S.bind(key + ":" + _this.config.modifier, function(win) {
+          return win.doOperation(S.op('focus', {
+            direction: direction
+          }));
+        });
+      });
+    };
+
+    return Focuser;
 
   })();
 
-  module.exports = Switcher;
+  module.exports = new Focuser;
 
 }).call(this);
 
@@ -216,6 +198,24 @@
   })();
 
   module.exports = new Resizer;
+
+}).call(this);
+
+
+},{}],7:[function(require,module,exports){
+(function() {
+  var Switcher;
+
+  Switcher = (function() {
+    function Switcher() {
+      false;
+    }
+
+    return Switcher;
+
+  })();
+
+  module.exports = Switcher;
 
 }).call(this);
 
