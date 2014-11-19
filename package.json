@@ -1,0 +1,17 @@
+{
+  "name": "slate",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".slate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-browserify": "*",
+    "grunt-coffeeify": "*"
+  },
+  "author": "",
+  "license": "ISC"
+}

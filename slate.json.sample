@@ -1,0 +1,35 @@
+{
+  "logger": {
+    "adapter": "growl",
+    "options": {
+      "path": "/usr/local/bin",
+      "params": {
+        "H": "127.0.0.1",
+        "P": "godsfav1"
+      }
+    }
+  },
+  "relauncher": {
+    "modifier": "ctrl,cmd",
+    "key": "r"
+  },
+  "focuser": {
+    "modifier": "ctrl,cmd",
+    "directions": {
+      "left"  : "h",
+      "right" : "l",
+      "below" : "j",
+      "above" : "k"
+    }
+  },
+  "resizer": {
+    "step": "5%",
+    "modifier": "ctrl,alt",
+    "directions": {
+      "left"  : "h",
+      "right" : "l",
+      "below" : "j",
+      "above" : "k"
+    }
+  }
+}
